@@ -1,0 +1,834 @@
+/* Reset và cài đặt cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #0f4c0f 0%, #1a472a 50%, #0d2d1a 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Các trang */
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Hiệu ứng tuyết rơi */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: #fff;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+.snowflake:nth-child(1) {
+    left: 10%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+}
+
+.snowflake:nth-child(2) {
+    left: 20%;
+    animation-duration: 12s;
+    animation-delay: 1s;
+}
+
+.snowflake:nth-child(3) {
+    left: 30%;
+    animation-duration: 15s;
+    animation-delay: 2s;
+}
+
+.snowflake:nth-child(4) {
+    left: 40%;
+    animation-duration: 11s;
+    animation-delay: 3s;
+}
+
+.snowflake:nth-child(5) {
+    left: 50%;
+    animation-duration: 13s;
+    animation-delay: 4s;
+}
+
+.snowflake:nth-child(6) {
+    left: 60%;
+    animation-duration: 14s;
+    animation-delay: 5s;
+}
+
+.snowflake:nth-child(7) {
+    left: 70%;
+    animation-duration: 16s;
+    animation-delay: 6s;
+}
+
+.snowflake:nth-child(8) {
+    left: 80%;
+    animation-duration: 12s;
+    animation-delay: 7s;
+}
+
+.snowflake:nth-child(9) {
+    left: 90%;
+    animation-duration: 10s;
+    animation-delay: 8s;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Trang giới thiệu */
+.intro-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.christmas-title {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 3.5rem;
+    color: #ff4d4d;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff4d4d;
+    }
+
+    to {
+        text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d, 0 0 30px #ff4d4d;
+    }
+}
+
+/* Cây thông Noel */
+.tree-container {
+    margin: 30px 0;
+}
+
+.tree {
+    position: relative;
+    width: 120px;
+    height: 180px;
+    margin: 0 auto;
+}
+
+.tree-top,
+.tree-middle,
+.tree-bottom {
+    position: absolute;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+}
+
+.tree-top {
+    top: 0;
+    border-bottom: 70px solid #0a7e0a;
+    z-index: 3;
+}
+
+.tree-middle {
+    top: 50px;
+    border-bottom: 80px solid #0b8e0b;
+    z-index: 2;
+}
+
+.tree-bottom {
+    top: 110px;
+    border-bottom: 90px solid #0c9e0c;
+    z-index: 1;
+}
+
+.tree-trunk {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 30px;
+    background-color: #8B4513;
+    z-index: 1;
+}
+
+.tree::before,
+.tree::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.tree::before {
+    top: 30px;
+    left: 30px;
+    background-color: #ff4d4d;
+    box-shadow: 0 0 10px #ff4d4d;
+}
+
+.tree::after {
+    top: 90px;
+    right: 40px;
+    background-color: #ffcc00;
+    box-shadow: 0 0 10px #ffcc00;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    margin: 30px 0;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Nút bấm */
+.gift-button {
+    background: linear-gradient(135deg, #ff4d4d 0%, #cc0000 100%);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 15px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.gift-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #ff6666 0%, #e60000 100%);
+}
+
+.gift-button:active {
+    transform: translateY(0);
+}
+
+.button-icon {
+    font-size: 1.5rem;
+}
+
+/* Trang chính */
+.main-header {
+    margin-top: 50PX;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.main-header h1 {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 3rem;
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Ông già Noel */
+.santa-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.santa-image {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.santa-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 5px solid #ffcc00;
+}
+
+.santa-hat {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 100px;
+}
+
+.hat-top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 60px solid #ff4d4d;
+}
+
+.hat-brim {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 20px;
+    background-color: #ff4d4d;
+    border-radius: 10px;
+}
+
+.santa-message {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 20px;
+    border: 2px solid #ffcc00;
+}
+
+.santa-message p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.santa-signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #ffcc00;
+    margin-top: 10px;
+}
+
+/* Phong thư và lá thư */
+.letter-container {
+    perspective: 1500px;
+    margin: 40px auto;
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto 40px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.envelope:hover {
+    transform: scale(1.05);
+}
+
+.envelope-front,
+.envelope-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ff4d4d;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.envelope-front {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 100px solid #e60000;
+    border-radius: 10px 10px 0 0;
+}
+
+.envelope-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #ff6666;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.instruction {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.envelope-back {
+    z-index: 1;
+    transform: translateY(-10px);
+    background-color: #e60000;
+}
+
+.letter {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 500px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    transition: transform 1.5s ease;
+    cursor: pointer;
+}
+
+.letter.flipped {
+    transform: rotateY(-180deg);
+}
+
+.letter-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: #fff8e1;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    overflow: hidden;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.back-page {
+    transform: rotateY(180deg);
+    background-color: #f5f5dc;
+}
+
+.letter-header {
+    text-align: center;
+    border-bottom: 2px solid #ff4d4d;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.letter-header h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    color: #cc0000;
+    margin-bottom: 10px;
+}
+
+.letter-icon {
+    font-size: 2rem;
+    color: #ffcc00;
+}
+
+.letter-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.date {
+    text-align: right;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.greeting {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #cc0000;
+}
+
+.message {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.signature {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.signature-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #cc0000;
+    margin-top: 5px;
+}
+
+.wishes-list {
+    list-style-type: none;
+    margin: 20px 0;
+}
+
+.wishes-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wishes-list i {
+    color: #ff4d4d;
+}
+
+.christmas-quote {
+    font-style: italic;
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: rgba(255, 204, 0, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid #ffcc00;
+}
+
+.letter-footer {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Lời chúc bổ sung */
+.wishes-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    position: relative;
+    z-index: 2;
+}
+
+.wishes-container h2 {
+    text-align: center;
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 2.5rem;
+    color: #ffcc00;
+    margin-bottom: 40px;
+}
+
+.wishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.wish-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.wish-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: #ffcc00;
+}
+
+.wish-icon {
+    font-size: 2.5rem;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+.wish-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #ffcc00;
+}
+
+.wish-card p {
+    line-height: 1.6;
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.main-footer p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #ff4d4d;
+    transform: translateY(-5px);
+}
+
+.back-button {
+    background-color: transparent;
+    border: 2px solid #ffcc00;
+    border-radius: 30px;
+    color: #ffcc00;
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #ffcc00;
+    color: #0d2d1a;
+}
+
+/* Điều khiển nhạc */
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.music-button {
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.music-button:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 768px) {
+
+    .christmas-title,
+    .main-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro-text,
+    .subtitle {
+        font-size: 1.1rem;
+        padding: 0 10px;
+    }
+
+    .gift-button {
+        font-size: 1.1rem;
+        padding: 12px 30px;
+    }
+
+    .santa-container {
+        flex-direction: column;
+    }
+
+    .santa-image {
+        width: 200px;
+        height: 250px;
+    }
+
+    .letter {
+        height: 400px;
+    }
+
+    .letter-page {
+        padding: 20px;
+    }
+
+    .letter-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .greeting,
+    .message {
+        font-size: 1rem;
+    }
+
+    .wishes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .envelope {
+        width: 250px;
+        height: 170px;
+    }
+
+    .envelope-flap {
+        border-left: 125px solid transparent;
+        border-right: 125px solid transparent;
+        border-top: 85px solid #e60000;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .christmas-title,
+    .main-header h1 {
+        font-size: 2rem;
+    }
+
+    .gift-button {
+        font-size: 1rem;
+        padding: 10px 25px;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .santa-image {
+        width: 180px;
+        height: 220px;
+    }
+
+    .letter {
+        height: 350px;
+    }
+
+    .letter-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .music-text {
+        display: none;
+    }
+
+    .music-button {
+        padding: 10px;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+}

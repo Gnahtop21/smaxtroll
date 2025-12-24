@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Giáng Sinh</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Mountains+of+Christmas:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Phần trang chờ -->
+    <section id="intro-page" class="page active">
+        <div class="snowflakes" aria-hidden="true">
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+        </div>
+        
+        <div class="intro-container">
+            <h1 class="christmas-title">CHÚC MỪNG GIÁNG SINH</h1>
+            <div class="tree-container">
+                <div class="tree">
+                    <div class="tree-top"></div>
+                    <div class="tree-middle"></div>
+                    <div class="tree-bottom"></div>
+                    <div class="tree-trunk"></div>
+                </div>
+            </div>
+            <p class="intro-text">Hãy mở món quà Giáng Sinh đặc biệt này để nhận những lời chúc tốt đẹp nhất!</p>
+            <button id="open-gift-btn" class="gift-button animate__animated animate__pulse animate__infinite">
+                <span class="button-text">Bấm vào để xem</span>
+                <i class="fas fa-gift button-icon"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Phần trang chính -->
+    <section id="main-page" class="page">
+        <div class="snowflakes" aria-hidden="true">
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+        </div>
+        
+        <header class="main-header">
+            <h1>Chúc Mừng Giáng Sinh 2025</h1>
+            <p class="subtitle">CHÚC MÀY GIÁNG SINH DUI À🎄</p>
+        </header>
+        
+        <main class="main-content">
+            <!-- Hình ảnh ông già Noel -->
+            <div class="santa-container">
+                <div class="santa-image">
+                    <img src="./img/santa.jpg" alt="Ông già Noel">
+                    <div class="santa-hat">
+                        <div class="hat-top"></div>
+                        <div class="hat-brim"></div>
+                    </div>
+                </div>
+                <div class="santa-message">
+                    <p>"Chúc mày hôm nay dui à! bớt nghiệp lại không là đéo có quà đâu con HOHHO!"</p>
+                    <p class="santa-signature">- Ông già Noel -</p>
+                </div>
+            </div>
+            
+     
+            
+  
+        </main>
+        
+
+    </section>
+
+    <!-- Hiệu ứng nhạc -->
+    <div class="music-control">
+        <button id="music-btn" class="music-button">
+            <i class="fas fa-music"></i>
+            <span class="music-text">Nhạc Giáng Sinh</span>
+        </button>
+        <audio id="christmas-music" loop>
+            <source src="./img/smax.mp3" type="audio/mpeg">
+            Trình duyệt của bạn không hỗ trợ phát nhạc.
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
